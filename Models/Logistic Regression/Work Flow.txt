@@ -1,0 +1,11 @@
+Work Flow for Logistic Regression:
+
+Step1 - Set Learning Rate & Number of Iterations; Initiate Random weight and bias value
+
+Step2 - Build Logistic Regression Function(sigmoid Function)
+
+Step3 - Update the parameters using gradient Descent
+
+Finally we will get the best model(best weight and bias value) as it has minimum cost function
+
+Step4 - Build the "Predict" function to determine the class of the data point.

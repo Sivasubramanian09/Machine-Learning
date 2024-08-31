@@ -1,0 +1,57 @@
+Deep Learning:
+	- Deep learning is the subset of machine learning based on neural networks.
+	- The deep refers to the use of multiple layers in the network.
+	- An artificial neural network or ANN uses layers of interconnected nodes called neurons that work together to process and learn from the input data.
+	- Used when there is a larger volume of dataset compared to machine learning.
+	- Better for task like image processing, natural language processing, etc.
+	- Requires high performance computer with GPU.
+
+- In a fully connected neural network, there is an input layer and one or more hidden layers connected one after the other. Each neurons receives input from the previous layers neurons or the input layer.
+
+- The output of the one layer becomes the input of the other layers. The layers of the neural network transform the input data through a series of non linear transformations, allowing the network to learn complex representations of the input data.
+
+Types of Machine Learning:
+	- Supervised : - Where the model is trained to classify or predict the outcomes with the labeled dataset.
+	- Unsupervised : - Where the model is trained to classify or predict the outcomes with the unlabeled datasets.
+	- Reinforcement : - Technique in which an agent learns to make decisions in an environment to maximize a reward signal.
+			  - The agent interacts with the environment by taking action and observing the resulting rewards.
+
+
+Artificial Neural Networks:
+
+	- It is built on the principles of the structure and operation of human neurons.
+
+Types of Neural Network:
+	1. Perceptron - Single Layered Neural network that perform binary classification
+	2. Multilayer Perceptron - Extended perceptron by adding hidden layers and uses back propagation for training.
+	3. Convolution Neural Network - Used for image data
+	4. RNN - Used in case of working for time series data or data involves sequences.
+	5. LSTM - Long short term memory - A type of RNN that can learn long term dependencies using gates.
+	6. Alex Net - A deep CNN that demonstrates the power of deep learning with large datasets.
+	7. VGG Net - Used for Very deep Neural networks and uses 3x3 Convolutional filters
+	8. Google Net - It is an 22- layered CNN
+	9. Res Net - It can be added to 152 layers., overcomes the problem of vanishing gradient. 
+
+
+
+Applications:
+	1. Computer Vision:- Object Detection
+			   - Image classification
+	2. Natural Language Processing: - Automatic text Generation
+					- Language translation	
+					- Speech Recognition
+	3.Reinforcement Learning: - Game Playing
+				  - Robotics
+				  - Control systems
+
+Advantages:
+		- High Accuracy
+		- Flexibility
+		- Scalability
+Disadvantages:
+		- Requires large data
+		- Black box nature - Difficult to understand the working of the models
+		- High Computational requirements
+
+
+

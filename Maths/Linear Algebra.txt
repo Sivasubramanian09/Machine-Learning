@@ -1,0 +1,64 @@
+Linear Algebra:
+
+	-Which involves with linear equations, Vectors and Matrixes
+	-Linear Equation: 
+		The Equation with highest degree of 1.Also known as One degree equation
+
+Vectors - Which as Magnitude and direction.
+		Magnitude - Length
+	  Example: Displacement, Velocity, acceleration, force, momentum.
+		Displacement - distance with direction
+		Velocity - Speed with direction
+
+Scalar - has only direction, An single number
+Vector - list of numbers, either a row or column
+Matrix - array of numbers.
+
+
+Vector forms:
+	1. Polar form: which is represented with angle(theta) - Example: a Vector A at 30 degree
+	2. Cartesian form: which is represented with x and y, Example: a vector A of (x, y)
+
+
+Products : 1. Dot Product a . b = |a||b|cos theta 
+	   2. Cross Product a x b = |a||b| sin theta
+
+
+Cosine Similarity = np.dot(a,b) / (norm(a) * norm(b))
+		    nn.CosineSimilarity(dim=0, eps=1e-6)
+
+Dot Product = Conditions : 1. 1st matrix column and 2nd matrix row should be same.
+
+				Example: A =[1,2,3         B = [2,3,4            Here 3 is matching and o/p will be in shape 2x3
+					     4,5,6] = 2x3       5,6,7
+                                                                9,8,2] = 3x3 
+
+
+norm = sqrt(sum(elements^2))
+
+Cosine distance = 1 - CosineSimilarity
+
+
+Vector Addition:
+ 		- Just adds the elements
+
+
+Cross Product = xi+ yj + zk
+
+
+Vector Dot Product (np.vdot): The dot product of the 2 vector is a scalar value , since vector have either 1 row of values or 1 columns of value.
+
+example : 	x1 = np.random.rand(10,1) -rand - Used to generate random numbers between 0-1 .
+		x2 = np.random.randn(10)   randn - Used to generate random numbers between -1-1.
+		z = vdot(x1,x2) , So here the value of z will be a scalar value.
+
+
+Vecdot(np.vecdot) - gives the vector dot product of 2 arrays
+
+Matrix_norm - Finds the norm of an matrix
+			- takes the whole matrix and adds the square of each number in the matrix and take the square root of the matrix.
+
+
+Vector norm - Used to compute the norm of an vector.	
+
+ 

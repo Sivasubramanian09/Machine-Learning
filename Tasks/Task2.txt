@@ -1,0 +1,31 @@
+Task - Take the code from the reference provided and do train/test/validate and find the accuracy and then do data augmentation by adding gaussian noise and find the accuracy for that data and compare both.
+
+Dataset - Diabetes.csv (used to predict whether the patient have chance of getting diabetes or not)
+
+Model - Simple ANN
+
+Algorithm:
+	1.Import all the libraries required
+	2.Load the dataset using pd.read_csv or np.loadtxt
+	3.Split the data to input features and output feature
+	4.Convert the data to Tensor using torch.tensor
+	5.Split the dataset into training , testing and validating using train_test_split from sklearn.model_selection
+	6.Create a simple NN with torch by Creating class or using nn.Sequential
+	7.Call the model
+	8.Define the optimizers and loss function (BCEloss and Adam optimizer)
+	9.Train the model with train data:
+		1.using batch and train the model
+		2.Forward_pass
+		3.Find the loss
+		4.Do backward_pass
+		5.Update the parameters
+		6.Sum the loss for every batch , i . e, trainloss += loss.item()  
+		7.Find the average loss by dividing the trainloss by no.of batches(len(data)/batch_size)
+		8.Do the same proces for Validation with torch.no_grad()
+	10.Plot the graph
+	11.Find the accuracy
+	12.Augment the data by adding gausian noise using mean and standard deviation
+	13.Repeat the step 9 with augmented data
+	14.Plot the graph
+	15.Find the accuracy
+	16.Compare the accuracy.

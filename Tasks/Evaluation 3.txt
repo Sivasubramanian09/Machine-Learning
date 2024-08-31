@@ -1,0 +1,92 @@
+Task :
+
+The files LSH_Main.m, LSH_Rand_Chaos.m, and logi.m contain matlab code for randomized projection using
+Chaotic maps.
+
+cpath_tvectors.csv contain the source dataset. Each line is a vector is CSV format.
+
+The objective is to port this matlab code to either Python or C++ (you can choose). Your ported code 
+should take "cpath_tvectors.csv" as the input file and generate the necessary output files as per the 
+matlab code.
+
+Please Note: The matlab code uses cpath_tdata.mat to load the csv files. 
+The Python/C++ code should directly load from cpath_tvectors.csv 
+
+
+
+Dataset : cpath_vectors.csv
+
+Functions: 3
+Todo:
+	We need the check the similarity of the input vector with Random projection and chaos and we have to give the values depending on the condition
+
+
+Source file algorithm:
+	1. LSH_Main
+		1.1.Define the n(no. of columns), L(no. of rows), m 
+		1.2.Initialize the Output vector for Rand and chaos with Zeros of Size L*m
+		1.3.Load the Dataset
+		1.4.Run a for loop till L 
+		1.5.store the first row in separate variable
+		1.6.Call the function LSH_Rand_Chaos by passing Input_vector and m 
+			-> Go to 2.
+		
+		1.7.Store the Output the function in variable Rout and Cout
+		1.8.Now take the transpose of it and store it in Output_vector rand and Chaos of i to m.
+		1.9.Load the data separately to Rand and Chaos files
+
+	2.LSH_Rand_Chaos
+		2.1.Store the length of Input vector in n variable
+		2.2.Initialize the variables with zeros of Rand and Chaos
+		2.3.Initialize variable a = 4.0
+		2.4.run a for loop for 'm' times
+		2.5.Initialize a variable R with np.random.rand of size n
+		2.6.Call function logi and pass parameters n and a
+			-> Go to 3
+				
+		2.7.Store the output of the function logi to variable C
+		2.8.Scale the range of C and R to -1 to 1 by 2*R-1 & 2*C-1
+		2.9.Find the Similarity(use any of the below methods):
+			1.Find the dot product of Input vector and R & Similarly for Input vector and C and divide these values by the product of bothr the norms
+			2.Convert the Variables to tensors and call torch.nn.CosineSimilarity anf pass the variables and find., and after finding, convert again back to numpy
+		2.10.Store 1 or -1 to Output vector rand and Chaos based on the conditions.
+		2.11.return both arrays
+
+	3.Logi
+		3.1.Initialize the variable C with zeros of size n
+		3.2.Store the C[0] to rand of 1
+		3.3.For loop till n:
+		3.4.Store C[i] with the given formula (a*C[i-1]*(1-C[i-1])
+		3.5.Return C
+		
+
+
+
+Torch.Vmap:
+	- Vmap is the vectorizing map, returns a new function that maps function over some dimension of the inputs. 
+	- Semantically vmap pushes the map into pytorch operations called by function.
+
+	- Very useful for handling the batch dimensions.
+
+	- Syntax: torch.vmap():
+		- parameters: 1. func - A python function that takes one or more arguments. Must return one or more tensors.
+			      2. in_dims - Specifies which dimension of the input should be mapped over.
+
+			      3. out_dims - Should Specify where the mapped dimension should appear in the appear in the outputs., It is an tuple.
+	
+
+
+	- Retrun Type:
+		- returns a new Batched function. It takes the same input as func, except each input as an extra dimension at the index specified by in_dims. It takes the same outputs as func, Except each output has an extra dimension at the index specified by out_dims. 
+
+
+	- Example - : if a input is of shape 3,5 it takes input as 1,5 for each iteration, this also done parallally.
+
+
+
+
+Torch. dot:
+
+	- Applicable for the tensors of 1D, it doesn't supports any other dimensions
+	- 
+	
